@@ -119,6 +119,49 @@ input, select, textarea {
 		font-weight: 400;
 	}
 
+    .zoom-button {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        justify-content: space-around;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        padding: 18px 30px;
+        background: #0e72ed;
+        border-radius: 12px;
+        color: #ffffff;
+    }
+
+    #zoom-button {
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        padding: 8px 40px;
+        background: #0e72ed;
+        border-radius: 12px;
+        color: #ffffff;
+    }
+
+    #spacer {
+        width: 15px;
+    }
+
+    .zoom-div-label {
+        color: #ffffff;
+        font-size: 1.4em;
+    }
+
+    #zoom-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
 	em, i {
 		font-style: italic;
 	}
@@ -2593,7 +2636,7 @@ input, select, textarea {
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
 		background-image: url("../../images/overlay.png"),
-                          url("../../images/bg.jpg");
+                          url("../../images/bg3.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
@@ -3079,7 +3122,7 @@ input, select, textarea {
 				background-attachment: scroll;
 				background-color: #1f1815;
 				background-image: url("../../images/overlay.png"),
-                                  url("../../images/bg.jpg");
+                                  url("../../images/bg3.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;

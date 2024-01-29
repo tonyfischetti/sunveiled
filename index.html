@@ -4,7 +4,7 @@
     <title>Scripture Talk</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="assets/css/main-color.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <script src="https://kit.fontawesome.com/2c981b3957.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   </head>
@@ -34,8 +34,24 @@
           </h2>
         </header>
         <p>
-        Our meeting takes place on Tuesdays, from 7-8 pm EST, <a href="https://us06web.zoom.us/j/88548756745" target="_blank">on Zoom.</a>
+        Our meeting takes place on Tuesdays, from 7-8 pm EST
         <br/>
+        <div id="zoom-div">
+
+          <!-- <form action="https://us06web.zoom.us/j/88548756745" method="get"> -->
+          <!--   <button id="zoom-button" type='submit' value='Click Me'/> -->
+          <!-- </form> -->
+
+          <a href="https://us06web.zoom.us/j/88548756745">
+            <button class="zoom-button">
+              <!-- <label class="zoom-div-label fa-solid fa-video"></label> -->
+              <div class="zoom-div-label fa-solid fa-video"></div>
+              <div id="spacer"></div>
+              <div>Launch Zoom meeting</div>
+            </button>
+          </a>
+
+        </div>
         <br/>
         Each week, a different Orthodox priest from around the country is invited to help guide our discussion.
         </p>
