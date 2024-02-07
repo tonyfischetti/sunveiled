@@ -3102,6 +3102,10 @@ input, select, textarea {
 				width: 100%;
 				display: block;
 			}
+            
+            .avatar {
+                display: none;
+            }
 
 			#header {
                 /* padding: 4.5em 1.5em 4.5em 1.5em; */
