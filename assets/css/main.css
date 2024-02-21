@@ -125,6 +125,16 @@ input, select, textarea {
 		font-weight: 400;
 	}
 
+    .a-little-bigger {
+        font-size: 1.3em;
+        font-weight: 500;
+        color: #464646;
+    }
+
+    section#one {
+        text-align: center;
+    }
+
     .zoom-button {
         display: flex;
         align-items: center;
@@ -3273,6 +3283,11 @@ input, select, textarea {
 				.poptrox-popup .nav-previous:before {
 					margin-top: -1em;
 				}
+
+	header.major2 h2 {
+		font-size: 1.5em;
+	}
+
 
 	}
 
