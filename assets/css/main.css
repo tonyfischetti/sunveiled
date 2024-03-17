@@ -70,6 +70,20 @@ input, select, textarea {
     width: 100%;
 }
 
+#flyer-holder {
+    display: flex;
+}
+
+.center-contents {
+    justify-content: center;
+    text-align: center;
+}
+
+.center-contents2 {
+    display: flex;
+    justify-content: center;
+}
+
 .center-this-text {
     text-align: center;
 }
@@ -80,6 +94,20 @@ input, select, textarea {
 
 .big-span {
     font-size: 1.1em;
+}
+
+img.flyer-image {
+    width: 50%;
+}
+
+.flyer-link {
+    text-align: center;
+	text-decoration: none;
+    border: none;
+}
+
+.no-border {
+    border: none;
 }
 
 /* Basic */
@@ -3153,7 +3181,6 @@ input, select, textarea {
 
         .only-mobile {
             display: flex;
-            justify-content: center;
         }
 
 		/* Basic */
