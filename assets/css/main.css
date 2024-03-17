@@ -70,6 +70,17 @@ input, select, textarea {
     width: 100%;
 }
 
+.center-this-text {
+    text-align: center;
+}
+
+.only-mobile {
+    display: none;
+}
+
+.big-span {
+    font-size: 1.1em;
+}
 
 /* Basic */
 
@@ -3139,6 +3150,11 @@ input, select, textarea {
 /* Medium */
 
 	@media screen and (max-width: 980px) {
+
+        .only-mobile {
+            display: flex;
+            justify-content: center;
+        }
 
 		/* Basic */
 
