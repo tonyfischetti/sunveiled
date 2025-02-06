@@ -3390,6 +3390,9 @@ img.flyer-image {
 	}
 
 
+a {
+  border-bottom-color: transparent;
+}
 
 a:not(.headericon) {
   border-bottom-color: transparent;
