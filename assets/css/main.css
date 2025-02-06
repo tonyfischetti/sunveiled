@@ -3388,3 +3388,17 @@ img.flyer-image {
 			}
 
 	}
+
+
+
+a:not(.headericon) {
+  border-bottom-color: transparent;
+  color: blue !important;
+  text-decoration: none !important;
+}
+
+a:not(.headericon):hover {
+  border-bottom-color: transparent;
+  color: #49bf9d !important;
+  text-decoration: none;
+}
