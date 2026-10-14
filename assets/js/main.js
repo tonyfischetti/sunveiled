@@ -13,8 +13,9 @@
 		$main = $('#main'),
 		settings = {
 
-			// Parallax background effect?
-				parallax: true,
+			// Parallax background effect? (disabled: it shifted the header image
+			// upward on scroll, exposing the background color underneath)
+				parallax: false,
 
 			// Parallax factor (lower = more intense, higher = less intense).
 				parallaxFactor: 20
