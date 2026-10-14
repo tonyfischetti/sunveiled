@@ -2708,11 +2708,6 @@ img.flyer-image {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #1f1815;
-		background-attachment: scroll,								scroll;
-		background-image: url("../../images/overlay.png"),
-                          url("../../images/bg3.jpg");
-		background-position: top left,							top left;
-		background-repeat: repeat,								no-repeat;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
@@ -2721,9 +2716,31 @@ img.flyer-image {
 		text-align: right;
 		top: 0;
 		width: 35%;
-		/* background-size: auto,								150%; */
-        background-size: cover;
+		isolation: isolate;
 	}
+
+		/* Background image lives on a pseudo-element so the parallax can
+		   slide it up and reveal the bottom of the image, rather than the
+		   background colour. main.js sets --parallax-extra (how much taller
+		   than the header the image box needs to be) and --parallax-shift
+		   (the current upward offset). */
+		#header:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: calc(100% + var(--parallax-extra, 0px));
+			z-index: -1;
+			background-attachment: scroll,								scroll;
+			background-image: url("../../images/overlay.png"),
+	                          url("../../images/bg3.jpg");
+			background-position: top left,							top left;
+			background-repeat: repeat,								no-repeat;
+			background-size: cover;
+			transform: translateY(var(--parallax-shift, 0px));
+			pointer-events: none;
+		}
 
 		#header > * {
 			-moz-flex-shrink: 0;
@@ -3102,7 +3119,7 @@ img.flyer-image {
 		display: none !important;
 	}
 
-	body.is-touch #header {
+	body.is-touch #header:before {
 		background-attachment: scroll;
 		background-size: auto, cover;
 	}
@@ -3197,10 +3214,13 @@ img.flyer-image {
 
 		/* Header */
 
-			#header {
+			#header:before {
 				background-attachment: scroll;
 				background-position: top left, center center;
 				background-size: auto,		cover;
+			}
+
+			#header {
 				left: auto;
 				padding: 6em 4em 0em 4em;
 				position: relative;

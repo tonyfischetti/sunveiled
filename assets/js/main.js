@@ -13,9 +13,8 @@
 		$main = $('#main'),
 		settings = {
 
-			// Parallax background effect? (disabled: it shifted the header image
-			// upward on scroll, exposing the background color underneath)
-				parallax: false,
+			// Parallax background effect?
+				parallax: true,
 
 			// Parallax factor (lower = more intense, higher = less intense).
 				parallaxFactor: 20
@@ -71,20 +70,31 @@
 
 			if (settings.parallax) {
 
+				// The header background is drawn by #header:before (see main.css).
+				// --parallax-extra makes that box taller than the header by the
+				// maximum shift, so sliding it up reveals the bottom of the image
+				// instead of the background colour. --parallax-shift is the
+				// current offset.
+				var headerStyle = $header[0].style,
+					updateParallax = function() {
+						var maxScroll = Math.max(0, $(document).height() - $window.height()),
+							shift = Math.min($window.scrollTop(), maxScroll) / settings.parallaxFactor;
+						headerStyle.setProperty('--parallax-extra', (maxScroll / settings.parallaxFactor) + 'px');
+						headerStyle.setProperty('--parallax-shift', (-1 * shift) + 'px');
+					};
+
 				breakpoints.on('<=medium', function() {
 
-					$window.off('scroll.strata_parallax');
-					$header.css('background-position', '');
+					$window.off('scroll.strata_parallax resize.strata_parallax');
+					headerStyle.removeProperty('--parallax-extra');
+					headerStyle.removeProperty('--parallax-shift');
 
 				});
 
 				breakpoints.on('>medium', function() {
 
-					$header.css('background-position', 'left 0px');
-
-					$window.on('scroll.strata_parallax', function() {
-						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
-					});
+					updateParallax();
+					$window.on('scroll.strata_parallax resize.strata_parallax', updateParallax);
 
 				});
 
